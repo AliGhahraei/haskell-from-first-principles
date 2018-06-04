@@ -1,0 +1,48 @@
+name:                haskell-from-first-principles
+version:             0.1.0.0
+github:              "AliGhahraei/haskell-from-first-principles"
+license:             BSD3
+author:              "Ali Ghahraei Figueroa"
+maintainer:          "aligf94@gmail.com"
+copyright:           "2018 Ali Ghahraei Figueroa"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/AliGhahraei/haskell-from-first-principles#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  haskell-from-first-principles-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-from-first-principles
+
+tests:
+  haskell-from-first-principles-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-from-first-principles
