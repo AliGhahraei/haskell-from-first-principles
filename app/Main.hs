@@ -1,6 +1,10 @@
 module Main where
 
+
 import Lib
 
+
 main :: IO ()
-main = someFunc
+main = do sayHello "Ali"
+          sayBye "Ali"
+          putStrLn ("Triple of 10 is " ++ show (triple 10))
